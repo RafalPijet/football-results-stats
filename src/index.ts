@@ -1,6 +1,8 @@
 import { MatchReader } from './MatchReader';
+import { CsvFileReader } from './CsvFileReader';
 
-const reader = new MatchReader('football.csv');
-reader.read();
+const csvFileReader = new CsvFileReader('football.csv');
+const matchReader = new MatchReader(csvFileReader);
+matchReader.load();
 
-console.log(reader.data);
+console.log(matchReader.matches);
